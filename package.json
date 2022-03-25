@@ -24,7 +24,7 @@
       "properties": {
         "extraArgs": {
           "type": "string",
-          "default": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication",
+          "default": "-noverify -Xmx4G -XX:+UseG1GC -XX:+UseStringDeduplication",
           "description": "Extra arguments passed to the Java VM when launching the Java Language Server. Eg. use `-noverify -Xmx1G  -XX:+UseG1GC -XX:+UseStringDeduplication` to bypass class verification, increase the heap size to 1GB and enable String deduplication with the G1 Garbage collector."
         }
       }
@@ -58,6 +58,16 @@
               ],
               "default": "interactive",
               "description": "Whether to automatically update the project configuration when build files change."
+            },
+            "uri": {
+              "type": "string",
+              "default": "https://download.eclipse.org/jdtls/milestones/1.9.0/jdt-language-server-1.9.0-202203031534.tar.gz",
+              "description": "language server tgz uri"
+            },
+            "launcherVersion": {
+              "type": "string",
+              "default": "1.6.400.v20210924-0641",
+              "description": "org.eclipse.equinox.launcher_{1.6.400.v20210924-0641.jar}"
             }
           }
         },
@@ -96,23 +106,6 @@
               }
             }
           }
-        }
-      }
-    },
-    "languageServer": {
-      "order": 40,
-      "type": "Object",
-      "description": "language server Configuration.",
-      "properties": {
-        "uri": {
-          "type": "string",
-          "default": "https://download.eclipse.org/jdtls/milestones/1.9.0/jdt-language-server-1.9.0-202203031534.tar.gz",
-          "description": "language server tgz uri"
-        },
-        "launcherVersion": {
-          "type": "string",
-          "default": "1.6.400.v20210924-0641",
-          "description": "org.eclipse.equinox.launcher_{1.6.400.v20210924-0641.jar}"
         }
       }
     }
